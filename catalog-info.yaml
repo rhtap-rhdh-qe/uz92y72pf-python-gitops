@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: uz92y72pf-python-gitops
+  description: This is GitOps manifest for uz92y72pf-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=uz92y72pf-python
+    backstage.io/kubernetes-id: uz92y72pf-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: uz92y72pf-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:uz92y72pf-python
